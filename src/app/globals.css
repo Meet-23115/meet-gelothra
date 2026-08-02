@@ -251,6 +251,7 @@ body {
   height: 100vh;
   width: 100vw;
   .Content{
+    padding: 40px 80px;
     width: 100%;
     height: 100%;
     display: flex;
