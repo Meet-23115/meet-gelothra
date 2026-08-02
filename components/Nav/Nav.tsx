@@ -1,6 +1,6 @@
+"use client";
 import React from "react";
 import { LiquidGlassCard } from "../uilayouts/liquid-glass";
-import { ShimmerButton } from "@/components/ui/shimmer-button";
 
 const Nav = () => {
   return (
@@ -11,7 +11,7 @@ const Nav = () => {
           shadowIntensity="xl"
           borderRadius="50px"
           blurIntensity="sm"
-          draggable
+          draggable={false}
           className="liquid-glass"
         >
           <div className="Content">
@@ -20,27 +20,28 @@ const Nav = () => {
                 <a href="/">Home</a>
               </li>
               <li>
-                <a href="/">Projects</a>
+                <a href="#projects">Projects</a>
               </li>
               <li>
-                <a href="/">About</a>
+                <a href="#about">About</a>
               </li>
               <li>
-                <a href="/">Let's Talk</a>
+                <a href="#contact">Let's Talk</a>
+              </li>
+              <li>
+                <a
+                  href="/Meet-Gelothra.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className=""
+                >
+                  Resume
+                </a>
               </li>
             </ul>
           </div>
         </LiquidGlassCard>
       </div>
-      {/* <div className="btn">
-        <ShimmerButton className="shadow-2xl  ">
-          <LiquidGlassCard className="btn-glass">
-            <div className=" h-4 w-5 ">
-              Resume
-            </div>
-          </LiquidGlassCard>
-        </ShimmerButton>
-      </div> */}
     </div>
   );
 };

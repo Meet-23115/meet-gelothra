@@ -162,7 +162,7 @@ export const LiquidGlassCard = ({
       >
         {/* Bend Layer (Backdrop blur with distortion) */}
         <div
-          className={`absolute inset-0 ${blurClasses[blurIntensity]} z-0`}
+          className={`absolute inset-0 ${blurClasses[blurIntensity]} z-0 pointer-events-none`}
           style={{
             borderRadius,
             filter: 'url(#glass-blur)',
@@ -171,7 +171,7 @@ export const LiquidGlassCard = ({
 
         {/* Face Layer (Main shadow and glow) */}
         <div
-          className='absolute inset-0 z-10'
+          className='absolute inset-0 z-10 pointer-events-none'
           style={{
             borderRadius,
             boxShadow: glowStyles[glowIntensity],
@@ -180,15 +180,15 @@ export const LiquidGlassCard = ({
 
         {/* Edge Layer (Inner highlights) */}
         <div
-          className='absolute inset-0 z-20'
+          className='absolute inset-0 z-20 pointer-events-none'
           style={{
             borderRadius,
             boxShadow: shadowStyles[shadowIntensity],
           }}
         />
 
-        {/* Content */}
-        {children}
+        {/* Content (inside the glass). Use zIndex between face (z-10) and edge (z-20) so highlights render above children */}
+        <div className="relative pointer-events-auto" style={{ zIndex: 15 }}>{children}</div>
       </MotionComponent>
     </>
   );

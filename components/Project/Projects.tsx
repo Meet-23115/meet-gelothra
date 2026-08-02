@@ -6,7 +6,7 @@ import { CarouselOrientation } from "./Carousel";
 
 const Projects = () => {
   return (
-    <div className="Projects">
+    <div className="Projects" id="projects">
       <div className="Content">
         <CarouselOrientation />
       </div>

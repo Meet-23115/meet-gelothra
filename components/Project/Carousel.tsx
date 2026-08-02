@@ -11,8 +11,70 @@ import { Safari } from "@/components/ui/safari";
 import { Backlight } from "@/components/ui/backlight";
 
 export function CarouselOrientation() {
+  const [api, setApi] = React.useState<CarouselApi | null>(null);
+
+  React.useEffect(() => {
+    if (!api) return;
+
+    let interval: NodeJS.Timeout;
+
+    const startAutoplay = () => {
+      interval = setInterval(() => {
+        const current = api.selectedScrollSnap();
+        const last = api.scrollSnapList().length - 1;
+
+        if (current === last) {
+          api.scrollTo(0);
+        } else {
+          api.scrollNext();
+        }
+      }, 5000);
+    };
+
+    const stopAutoplay = () => {
+      clearInterval(interval);
+    };
+
+    startAutoplay();
+
+    // Pause on interaction
+    api.on("pointerDown", stopAutoplay);
+    api.on("pointerUp", startAutoplay);
+    api.on("select", () => {
+      stopAutoplay();
+      startAutoplay(); // Restart timer after manual navigation
+    });
+
+    return () => {
+      stopAutoplay();
+
+      api.off("pointerDown", stopAutoplay);
+      api.off("pointerUp", startAutoplay);
+    };
+  }, [api]);
+  const intervalRef = React.useRef<NodeJS.Timeout>();
+
+  const startAutoplay = () => {
+    clearInterval(intervalRef.current);
+
+    intervalRef.current = setInterval(() => {
+      if (!api) return;
+
+      const current = api.selectedScrollSnap();
+      const last = api.scrollSnapList().length - 1;
+
+      current === last ? api.scrollTo(0) : api.scrollNext();
+    }, 3000);
+  };
+
+  const stopAutoplay = () => {
+    clearInterval(intervalRef.current);
+  };
   return (
     <Carousel
+      setApi={setApi}
+      onMouseEnter={stopAutoplay}
+      onMouseLeave={startAutoplay}
       orientation="vertical"
       opts={{
         align: "start",

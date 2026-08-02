@@ -1,20 +1,11 @@
+"use client";
 import { DiaTextReveal } from "@/components/ui/dia-text-reveal";
-import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
-import { RainbowButton } from "@/components/ui/rainbow-button";
 import { WavyBackground } from "@/components/ui/wavy-background";
 import React from "react";
 
 const About = () => {
-  const downloadResume = () => {
-    const link = document.createElement("a");
-    link.href = "/Meet-Gelothra.pdf";
-    link.download = "Meet-Gelothra.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
   return (
-    <div className="About">
+    <div className="About" id="about">
       <WavyBackground className="max-w-4xl mx-auto pb-40">
         <p className="text-2xl md:text-4xl lg:text-7xl text-white font-bold inter-var text-center">
           <DiaTextReveal
@@ -31,16 +22,7 @@ const About = () => {
           is an opportunity to learn something new, solve meaningful problems,
           and create products that leave a lasting impression.
         </p>
-        <div className="flex justify-center  mt-2">
-          <HoverBorderGradient
-            as="button"
-            onClick={downloadResume}
-            containerClassName="rounded-full cursor-pointer "
-            className="dark:bg-black bg-white cursor-pointer text-black dark:text-white"
-          >
-            Download Resume
-          </HoverBorderGradient>
-        </div>
+        {/* Download button removed from About per request; moved to Nav */}
       </WavyBackground>
     </div>
   );

@@ -57,6 +57,10 @@ export function HoverBorderGradient({
   }, [hovered]);
   return (
     <Tag
+      onClick={(e: any) => {
+        const handler = (props as any).onClick;
+        if (typeof handler === 'function') handler(e);
+      }}
       onMouseEnter={(event: React.MouseEvent<HTMLDivElement>) => {
         setHovered(true);
       }}
@@ -67,17 +71,20 @@ export function HoverBorderGradient({
       )}
       {...props}
     >
+      {/* clickable content: also forward onClick here to ensure clicks land even if Tag-level events are intercepted */}
       <div
         className={cn(
           "w-auto text-white z-10 bg-black px-4 py-2 rounded-[inherit]",
           className
         )}
+        onClick={(props as any).onClick}
+        style={{ pointerEvents: 'auto' }}
       >
         {children}
       </div>
       <motion.div
         className={cn(
-          "flex-none inset-0 overflow-hidden absolute z-0 rounded-[inherit]"
+          "flex-none inset-0 overflow-hidden absolute z-0 rounded-[inherit] pointer-events-none"
         )}
         style={{
           filter: "blur(2px)",
@@ -93,7 +100,7 @@ export function HoverBorderGradient({
         }}
         transition={{ ease: "linear", duration: duration ?? 1 }}
       />
-      <div className="bg-black absolute z-1 flex-none inset-[2px] rounded-[100px]" />
+      <div className="bg-black absolute z-1 flex-none inset-[2px] rounded-[100px] pointer-events-none" />
     </Tag>
   );
 }
