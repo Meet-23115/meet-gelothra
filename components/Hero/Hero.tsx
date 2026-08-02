@@ -2,6 +2,7 @@ import { Particles } from "@/components/ui/particles";
 import { VideoText } from "@/components/ui/video-text";
 import React, { useEffect, useState } from "react";
 import { LiquidGlassCard } from "../uilayouts/liquid-glass";
+import { DiaTextReveal } from "@/components/ui/dia-text-reveal";
 
 const Hero = () => {
   const [greeting, setGreeting] = useState("HELLO");
@@ -28,9 +29,15 @@ const Hero = () => {
           </div>
         </div>
         <section className="Content">
-          <div className="video-text">
-            <div className="relative h-[600px] w-[600px] overflow-hidden">
-              <VideoText
+          <div className="video-text w-[400px]">
+              <DiaTextReveal
+                className="text-[60px] w-full font-bold tracking-tight"
+                text={`${greeting} I AM
+MEET
+GELOTHRA`}
+                colors={["#A97CF8", "#F38CB8", "#FDCC92"]}
+              />
+              {/* <VideoText
                 className=" w-full "
                 fontSize={15}
                 src="https://cdn.magicui.design/ocean-small.webm"
@@ -39,8 +46,7 @@ const Hero = () => {
 I AM
 MEET
 GELOTHRA`}
-              </VideoText>
-            </div>
+              </VideoText> */}
           </div>
           <LiquidGlassCard
             glowIntensity="xl"
@@ -56,7 +62,6 @@ GELOTHRA`}
               </div>
             </div>
           </LiquidGlassCard>
-          
         </section>
         {/* <img src="./hero-bg.jpg" alt="" /> */}
       </main>
