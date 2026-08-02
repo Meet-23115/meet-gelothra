@@ -70,7 +70,9 @@ export function CarouselOrientation() {
   };
 
   const stopAutoplay = () => {
-    clearInterval(intervalRef.current);
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+    }
   };
   return (
     <Carousel
