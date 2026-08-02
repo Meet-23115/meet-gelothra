@@ -52,10 +52,12 @@ export function CarouselOrientation() {
       api.off("pointerUp", startAutoplay);
     };
   }, [api]);
-  const intervalRef = React.useRef<NodeJS.Timeout>();
+  const intervalRef = React.useRef<ReturnType<typeof setInterval> | null>(null);
 
   const startAutoplay = () => {
-    clearInterval(intervalRef.current);
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+    }
 
     intervalRef.current = setInterval(() => {
       if (!api) return;
