@@ -1,29 +1,30 @@
-import type { HTMLAttributes } from "react"
+import { useEffect, useState, type HTMLAttributes } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 
-const SAFARI_WIDTH = 1203
-const SAFARI_HEIGHT = 753
-const SCREEN_X = 1
-const SCREEN_Y = 52
-const SCREEN_WIDTH = 1200
-const SCREEN_HEIGHT = 700
+const SAFARI_WIDTH = 1203;
+const SAFARI_HEIGHT = 753;
+const SCREEN_X = 1;
+const SCREEN_Y = 52;
+const SCREEN_WIDTH = 1200;
+const SCREEN_HEIGHT = 700;
 
 // Calculated percentages
-const LEFT_PCT = (SCREEN_X / SAFARI_WIDTH) * 100
-const TOP_PCT = (SCREEN_Y / SAFARI_HEIGHT) * 100
-const WIDTH_PCT = (SCREEN_WIDTH / SAFARI_WIDTH) * 100
-const HEIGHT_PCT = (SCREEN_HEIGHT / SAFARI_HEIGHT) * 100
+const LEFT_PCT = (SCREEN_X / SAFARI_WIDTH) * 100;
+const TOP_PCT = (SCREEN_Y / SAFARI_HEIGHT) * 100;
+const WIDTH_PCT = (SCREEN_WIDTH / SAFARI_WIDTH) * 100;
+const HEIGHT_PCT = (SCREEN_HEIGHT / SAFARI_HEIGHT) * 100;
 
-type SafariMode = "default" | "simple"
+type SafariMode = "default" | "simple";
 
 export interface SafariProps extends HTMLAttributes<HTMLDivElement> {
-  url?: string
-  imageSrc?: string
-  videoSrc?: string
-  mode?: SafariMode
+  url?: string;
+  images?: string[];
+  videoSrc?: string;
+  mode?: SafariMode;
 }
 
 export function Safari({
-  imageSrc,
+  images,
   videoSrc,
   url,
   mode = "default",
@@ -31,9 +32,18 @@ export function Safari({
   style,
   ...props
 }: SafariProps) {
-  const hasVideo = !!videoSrc
-  const hasMedia = hasVideo || !!imageSrc
+  const hasVideo = !!videoSrc;
+  const hasMedia = hasVideo || !!images?.length;
+  const [current, setCurrent] = useState(0);
+  useEffect(() => {
+    if (!images?.length) return;
 
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % images.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [images]);
   return (
     <div
       className={`relative inline-block w-full align-middle leading-none ${className ?? ""}`}
@@ -65,7 +75,7 @@ export function Safari({
         </div>
       )}
 
-      {!hasVideo && imageSrc && (
+      {!hasVideo && images && images.length > 0 && (
         <div
           className="pointer-events-none absolute z-0 overflow-hidden"
           style={{
@@ -76,11 +86,23 @@ export function Safari({
             borderRadius: "0 0 11px 11px",
           }}
         >
-          <img
-            src={imageSrc}
-            alt=""
-            className="block size-full object-cover object-top"
-          />
+          <div className="relative h-full w-full overflow-hidden">
+            <AnimatePresence>
+              <motion.img
+                key={current}
+                src={images[current]}
+                alt=""
+                className="absolute inset-0 h-full w-full object-cover"
+                initial={{ y: "100%" }}
+                animate={{ y: "0%" }}
+                exit={{ y: "-100%" }}
+                transition={{
+                  duration: 0.6,
+                  ease: [0.4, 0, 0.2, 1],
+                }}
+              />
+            </AnimatePresence>
+          </div>
         </div>
       )}
 
@@ -234,5 +256,5 @@ export function Safari({
         </g>
       </svg>
     </div>
-  )
+  );
 }
