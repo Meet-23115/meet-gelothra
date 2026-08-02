@@ -5,7 +5,7 @@ import { LiquidGlassCard } from "../uilayouts/liquid-glass";
 
 const Hero = () => {
   return (
-    <div className="Hero">
+    <div className="Hero ">
       <main>
         <div className="background-particles">
           <div className="relative h-full w-full overflow-hidden">
@@ -14,13 +14,16 @@ const Hero = () => {
         </div>
         <section className="Content">
           <div className="video-text">
-            <div className="relative h-[400px] w-[600px] overflow-hidden">
+            <div className="relative h-[600px] w-[600px] overflow-hidden">
               <VideoText
                 className=" w-full "
                 fontSize={15}
                 src="./sabrina-carpenter-kissing-screen-live-wallpaper.mp4"
               >
-                {`MEET
+                {`GOOD
+MORNING,
+I AM
+MEET
 GELOTHRA`}
               </VideoText>
             </div>
