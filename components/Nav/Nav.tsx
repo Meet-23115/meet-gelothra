@@ -42,6 +42,9 @@ const Nav = () => {
           </div>
         </LiquidGlassCard>
       </div>
+      <div className="Mobile-Nav">
+        Nav
+      </div>
     </div>
   );
 };

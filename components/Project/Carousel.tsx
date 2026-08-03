@@ -86,8 +86,8 @@ export function CarouselOrientation() {
       className="w-full "
     >
       <CarouselContent className="h-[600px] w-full ">
-        <CarouselItem className="basis-full w-full flex items-center justify-center ">
-          <div className="h-[500px] w-full flex gap-[50px] items-center justify-center ">
+        {/* <CarouselItem className="basis-full w-full flex items-center justify-center ">
+          <div className="h-[500px] w-full project-container flex gap-[50px] items-center justify-center ">
             <div className="w-[400px] project-item">
               <h1>Hackathon-Winning AI Agent with System-Level Control</h1>
               <p>
@@ -113,7 +113,7 @@ export function CarouselOrientation() {
           </div>
         </CarouselItem>
         <CarouselItem className="basis-full w-full flex items-center justify-center ">
-          <div className="h-[500px] w-full flex gap-[50px] items-center justify-center ">
+          <div className="h-[500px] w-full project-container flex gap-[50px] items-center justify-center ">
             <div className="w-[400px] project-item">
               <h1>Freelance E-Commerce Platform</h1>
               <p>
@@ -129,8 +129,8 @@ export function CarouselOrientation() {
                 improvements.
               </p>
             </div>
-            <div className="w-[800px] flex">
-              <Backlight blur={20} className="w-full h-[550px]">
+            <div className="project-image flex">
+              <Backlight blur={20} className="w-full h-[550px] item">
                 <Safari
                   url="magicui.design"
                   images={[
@@ -142,11 +142,11 @@ export function CarouselOrientation() {
               </Backlight>
             </div>
           </div>
-        </CarouselItem>
+        </CarouselItem> */}
 
         <CarouselItem className="basis-full w-full flex items-center justify-center ">
-          <div className="h-[500px] w-full flex gap-[50px] items-center justify-center ">
-            <div className="w-[400px] project-item">
+          <div className="h-[500px] w-full project-container flex gap-[50px] items-center justify-center ">
+            <div className=" project-item">
               <h1>Business Management System (BMS)</h1>
               <p>
                 A modern SaaS platform built to centralize business operations,
