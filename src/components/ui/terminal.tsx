@@ -424,11 +424,11 @@ export function Terminal({
     <div
       ref={containerRef}
       className={cn(
-        "mx-auto w-full max-w-xl px-4 font-mono text-xs",
+        "mx-auto w-full  px-4 font-mono text-xs ",
         className,
       )}
     >
-      <div className="overflow-hidden rounded-lg border border-neutral-800 bg-neutral-900 shadow-2xl">
+      <div className="overflow-hidden rounded-lg border border-neutral-800 bg-neutral-900 terminal-child shadow-2xl">
         {/* Title Bar */}
         <div className="flex items-center gap-2 bg-neutral-800 px-4 py-3">
           <div className="flex items-center gap-1.5">
@@ -447,7 +447,7 @@ export function Terminal({
         {/* Terminal Content */}
         <div
           ref={contentRef}
-          className="no-visible-scrollbar h-80 overflow-y-auto p-4 font-mono"
+          className="no-visible-scrollbar h-full overflow-y-auto p-8 pb-12 terminal-text-area font-mono"
         >
           {lines.map((line, i) => (
             <div key={i} className="leading-relaxed whitespace-pre-wrap">

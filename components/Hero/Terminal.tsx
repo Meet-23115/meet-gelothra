@@ -4,8 +4,9 @@ import { Terminal } from "@/components/ui/terminal";
 
 export function TerminalDiv() {
   return (
-    <section className="w-full py-10 md:py-20">
+    <section className="w-full h-full py-10 md:py-20">
       <Terminal
+      className="terminal"
         commands={["whoami", "skills --stack", "launch ai-agent", "status"]}
         outputs={{
           0: ["Meet Gelothra", "Software Engineer • AI Builder"],

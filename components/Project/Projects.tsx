@@ -8,7 +8,7 @@ import { Particles } from "@/components/ui/particles";
 const Projects = () => {
   return (
     <div className="Projects" id="projects">
-      <Particles className="absolute h-full w-full" color="white" />
+      {/* <Particles className="absolute h-full w-full" color="white" /> */}
       <div className="Content">
         <CarouselOrientation />
       </div>

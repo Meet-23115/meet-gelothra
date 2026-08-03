@@ -31,7 +31,7 @@ const Hero = () => {
           </div>
         </div>
         <section className="Content">
-            <TerminalDiv />
+            <TerminalDiv  />
           {/* <div className="video-text">
             <DiaTextReveal
               className="hero-text"
