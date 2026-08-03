@@ -1,3 +1,4 @@
+"use client"
 import * as React from "react";
 import type { CarouselApi } from "@/components/ui/carousel";
 import {
@@ -67,7 +68,7 @@ export function CarouselOrientation() {
       const last = api.scrollSnapList().length - 1;
 
       current === last ? api.scrollTo(0) : api.scrollNext();
-    }, 3000);
+    }, 5000);
   };
 
   const stopAutoplay = () => {
@@ -75,6 +76,19 @@ export function CarouselOrientation() {
       clearInterval(intervalRef.current);
     }
   };
+  
+
+const [isMobile, setIsMobile] = React.useState(false);
+
+React.useEffect(() => {
+  const check = () => setIsMobile(window.innerWidth < 768);
+
+  check();
+
+  window.addEventListener("resize", check);
+  return () => window.removeEventListener("resize", check);
+}, []);
+
   return (
     <Carousel
       setApi={setApi}
@@ -85,8 +99,9 @@ export function CarouselOrientation() {
       orientation="vertical"
       opts={{
         align: "start",
+        watchDrag : !isMobile
       }}
-      className="w-full h-full "
+      className="w-full h-[80%] "
     >
       <CarouselContent className=" h-full w-full carousel ">
         <CarouselItem className="basis-full w-full h-full flex items-center justify-center carousel-item ">
