@@ -182,7 +182,7 @@ body {
 }
 
 .Nav {
-  width: 100%;
+  width: 100dvw;
   position: fixed;
   padding: 0px 20px;
   display: flex;
@@ -259,10 +259,8 @@ body {
   top: 0;
   z-index: -1;
   height: 100vh;
-  background:
-    radial-gradient(circle at 15% 10%, #d946ef55, transparent 30%),
-    radial-gradient(circle at 90% 20%, #7c3aed55, transparent 35%),
-    radial-gradient(circle at 50% 90%, #9333ea55, transparent 40%), #120018;
+  
+  background: white;
   padding-top: 100px;
   .background-particles {
     position: absolute;
@@ -306,7 +304,7 @@ body {
   position: relative;
   top: 0;
   z-index: -1;
-  color: white;
+  color: black;
   height: 100vh;
   width: 100vw;
   border-top-right-radius: 20px;

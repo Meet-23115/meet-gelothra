@@ -11,7 +11,7 @@ const Nav = () => {
           shadowIntensity="xl"
           borderRadius="50px"
           blurIntensity="sm"
-          draggable={false}
+          draggable
           className="liquid-glass"
         >
           <div className="Content">

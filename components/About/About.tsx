@@ -6,7 +6,7 @@ import React from "react";
 const About = () => {
   return (
     <div className="About" id="about">
-      <WavyBackground className="max-w-4xl mx-auto pb-40">
+      <WavyBackground  className="max-w-4xl mx-auto pb-40">
         <p className="text-2xl md:text-4xl lg:text-7xl text-white font-bold inter-var text-center">
           <DiaTextReveal
             className="text-4xl text-white font-bold tracking-tight"

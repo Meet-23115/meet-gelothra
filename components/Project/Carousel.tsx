@@ -89,6 +89,32 @@ export function CarouselOrientation() {
         <CarouselItem className="basis-full w-full flex items-center justify-center ">
           <div className="h-[500px] w-full flex gap-[50px] items-center justify-center ">
             <div className="w-[400px] project-item">
+              <h1>Hackathon-Winning AI Agent with System-Level Control</h1>
+              <p>
+                Built a hackathon-winning AI agent capable of understanding
+                natural language, executing system-level operations, and
+                interacting directly with the operating system. The agent can
+                launch applications, automate workflows, manage files, execute
+                terminal commands, and perform complex multi-step tasks
+                autonomously. It also features a real-time visualization
+                interface that makes the agent's reasoning, execution flow, and
+                decision-making process transparent, providing users with
+                complete visibility into every action while maintaining a
+                seamless conversational experience. This project demonstrates
+                expertise in AI agents, system automation, tool orchestration,
+                and intuitive human-AI interaction.
+              </p>
+            </div>
+            <div className="w-[800px] flex">
+              <Backlight blur={20} className="w-full h-[550px]">
+                <Safari url="magicui.design" images={["ai1.png", "ai2.png","ai3.png","ai4.png"]} />
+              </Backlight>
+            </div>
+          </div>
+        </CarouselItem>
+        <CarouselItem className="basis-full w-full flex items-center justify-center ">
+          <div className="h-[500px] w-full flex gap-[50px] items-center justify-center ">
+            <div className="w-[400px] project-item">
               <h1>Freelance E-Commerce Platform</h1>
               <p>
                 Developed a custom full-stack e-commerce platform for a client,

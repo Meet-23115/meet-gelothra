@@ -3,6 +3,7 @@ import { VideoText } from "@/components/ui/video-text";
 import React, { useEffect, useState } from "react";
 import { LiquidGlassCard } from "../uilayouts/liquid-glass";
 import { DiaTextReveal } from "@/components/ui/dia-text-reveal";
+import { LightRays } from "@/components/ui/light-rays";
 
 const Hero = () => {
   const [greeting, setGreeting] = useState("HELLO");
@@ -24,20 +25,21 @@ const Hero = () => {
     <div className="Hero ">
       <main>
         <div className="background-particles">
-          <div className="relative h-full w-full overflow-hidden">
+          <div className="relative h-dvh  w-dvw overflow-hidden">
+            <LightRays color="blue" />
             <Particles color="white" />
           </div>
         </div>
         <section className="Content">
           <div className="video-text w-[400px]">
-              <DiaTextReveal
-                className="text-[60px] w-full font-bold tracking-tight"
-                text={`${greeting} I AM
-MEET
-GELOTHRA`}
-                colors={["#A97CF8", "#F38CB8", "#FDCC92"]}
-              />
-              {/* <VideoText
+            <DiaTextReveal
+              className="text-[60px] w-full font-bold tracking-tight"
+              text={`${greeting} I AM
+                MEET
+                GELOTHRA`}
+              colors={["#A97CF8", "#F38CB8", "#FDCC92"]}
+            />
+            {/* <VideoText
                 className=" w-full "
                 fontSize={15}
                 src="https://cdn.magicui.design/ocean-small.webm"
