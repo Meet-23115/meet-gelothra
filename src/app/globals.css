@@ -177,8 +177,8 @@
   }
 }
 body {
-  width: 100vw;
-  overflow-x: hidden;
+  width: 100dvw;
+  overflow-x: hidden !important;
 }
 
 .Nav {
@@ -273,13 +273,33 @@ body {
   z-index: -1;
   height: 100dvh;
   width: 100dvw;
+  main {
+    height: 100%;
+  }
 
-  background: white;
+  background:
+    radial-gradient(
+      circle at 85% 15%,
+      rgba(0, 0, 0, 0.35) 0%,
+      rgba(0, 0, 0, 0.18) 28%,
+      transparent 70%
+    ),
+    radial-gradient(
+      circle at 25% 60%,
+      rgba(0, 0, 0, 0.18) 0%,
+      rgba(0, 0, 0, 0.08) 35%,
+      transparent 75%
+    ),
+    radial-gradient(circle at 70% 80%, rgba(0, 0, 0, 0.12) 0%, transparent 65%),
+    linear-gradient(135deg, #ffffff 0%, #f8f8f8 35%, #ececec 65%, #ffffff 100%);
+
+  background-size: cover;
   padding-top: 100px;
   .background-particles {
     position: absolute;
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
     top: 0;
     left: 0;
   }
@@ -292,11 +312,20 @@ body {
     display: flex;
     @media (max-width: 768px) {
       flex-direction: column;
+      height: 100%;
+      margin-top: 0px;
     }
     .video-text {
       display: flex;
       align-items: center;
       justify-content: center;
+      .hero-text {
+        font-size: 80px;
+        font-weight: 800;
+        @media (max-width: 768px) {
+          font-size: 20px;
+        }
+      }
     }
     .image-wrapper {
       /* position: relative; */
@@ -324,21 +353,60 @@ body {
   position: relative;
   top: 0;
   z-index: -1;
-  color: black;
+  /* color: black; */
   height: 100vh;
   width: 100vw;
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;
+  @media (max-width: 768px) {
+    padding: 20px;
+  }
 }
 .Projects {
   position: sticky;
-  padding: 20px;
+  /* padding: 20px; */
   background-color: white;
-  height: 100vh;
-  width: 100vw;
+  height: 100dvh;
+  width: 100dvw;
+  @media (max-width: 768px) {
+    /* height: fit-content; */
+  }
   .Content {
-    .project-item {
-      width: 400px;
+    .project-container {
+      display: flex;
+      height: 50%;
+      gap: 50px;
+
+      @media (max-width: 768px) {
+        flex-direction: column-reverse;
+        gap: 20px;
+        height: 100%;
+        width: 90%;
+        overflow: auto;
+      }
+      .project-item {
+        width: 100%;
+        height: 50%;
+        @media (max-width: 768px) {
+          h1 {
+            font-size: 20px;
+          }
+          p {
+            font-size: 12px;
+          }
+        }
+      }
+      .carousel-browser {
+        width: 100%;
+        @media (min-width: 768px) {
+          height: 50%;
+        }
+      }
+      .carousel-item {
+        @media (max-width: 768px) {
+          flex-direction: column-reverse;
+        }
+      }
     }
     padding: 40px 80px;
     @media (max-width: 768px) {
@@ -357,7 +425,8 @@ body {
 }
 
 .Contact {
-  height: 80vh;
+  /* height: 80vh; */
+  padding: 20px;
   width: 100%;
   background-color: black;
 }

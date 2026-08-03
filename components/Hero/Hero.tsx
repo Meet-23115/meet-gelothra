@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { LiquidGlassCard } from "../uilayouts/liquid-glass";
 import { DiaTextReveal } from "@/components/ui/dia-text-reveal";
 import { LightRays } from "@/components/ui/light-rays";
+import { TerminalDiv } from "./Terminal";
 
 const Hero = () => {
   const [greeting, setGreeting] = useState("HELLO");
@@ -25,47 +26,20 @@ const Hero = () => {
     <div className="Hero ">
       <main>
         <div className="background-particles">
-          <div className="relative h-dvh  w-dvw overflow-hidden">
-            <LightRays color="blue" />
-            <Particles color="white" />
+          <div className="relative h-full w-full overflow-hidden">
+            <Particles className="h-full w-full" color="white" />
           </div>
         </div>
         <section className="Content">
-          <div className="video-text w-[400px]">
+            <TerminalDiv />
+          {/* <div className="video-text">
             <DiaTextReveal
-              className="text-[60px] w-full font-bold tracking-tight"
-              text={`${greeting} I AM
-                MEET
-                GELOTHRA`}
+              className="hero-text"
+              text={`${greeting} I AM MEET GELOTHRA`}
               colors={["#A97CF8", "#F38CB8", "#FDCC92"]}
             />
-            {/* <VideoText
-                className=" w-full "
-                fontSize={15}
-                src="https://cdn.magicui.design/ocean-small.webm"
-              >
-                {`${greeting}
-I AM
-MEET
-GELOTHRA`}
-              </VideoText> */}
-          </div>
-          <LiquidGlassCard
-            glowIntensity="xl"
-            shadowIntensity="xl"
-            borderRadius="50px"
-            blurIntensity="sm"
-            draggable
-            className=""
-          >
-            <div className="image-wrapper">
-              <div className="My-Image">
-                <img src="./me.png" alt="" />
-              </div>
-            </div>
-          </LiquidGlassCard>
+          </div> */}
         </section>
-        {/* <img src="./hero-bg.jpg" alt="" /> */}
       </main>
     </div>
   );

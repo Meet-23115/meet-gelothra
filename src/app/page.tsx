@@ -5,16 +5,16 @@ import ReactLenis from "lenis/react";
 import About from "../../components/About/About";
 import Projects from "../../components/Project/Projects";
 import Contact from "../../components/Contact/Contact";
+import Head from "next/head";
 
 export default function Home() {
   return (
     <ReactLenis root>
-      <div>
+      
         <Hero />
-        <About />
-        <Projects />
+        <About /> 
+         <Projects />
         <Contact />
-      </div>
     </ReactLenis>
   );
 }
