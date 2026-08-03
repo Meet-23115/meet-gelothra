@@ -86,7 +86,7 @@ export function CarouselOrientation() {
       className="w-full "
     >
       <CarouselContent className="h-[600px] w-full ">
-        {/* <CarouselItem className="basis-full w-full flex items-center justify-center ">
+        <CarouselItem className="basis-full w-full flex items-center justify-center ">
           <div className="h-[500px] w-full project-container flex gap-[50px] items-center justify-center ">
             <div className="w-[400px] project-item">
               <h1>Hackathon-Winning AI Agent with System-Level Control</h1>
@@ -142,7 +142,7 @@ export function CarouselOrientation() {
               </Backlight>
             </div>
           </div>
-        </CarouselItem> */}
+        </CarouselItem>
 
         <CarouselItem className="basis-full w-full flex items-center justify-center ">
           <div className="h-[500px] w-full project-container flex gap-[50px] items-center justify-center ">
