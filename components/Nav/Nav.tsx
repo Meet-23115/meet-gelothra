@@ -19,19 +19,20 @@ const Nav = () => {
           <div className="Content">
             <ul>
               <li>
-                <a href="/">Home</a>
+                <a href="/" onClick={()=>setMobileNavHidden(true)}>Home</a>
               </li>
               <li>
-                <a href="#projects">Projects</a>
+                <a href="#projects" onClick={()=>setMobileNavHidden(true)}>Projects</a>
               </li>
               <li>
-                <a href="#about">About</a>
+                <a href="#about" onClick={()=>setMobileNavHidden(true)}>About</a>
               </li>
               <li>
-                <a href="#contact">Let's Talk</a>
+                <a href="#contact" onClick={()=>setMobileNavHidden(true)}>Let's Talk</a>
               </li>
               <li>
                 <a
+                onClick={()=>setMobileNavHidden(true)}
                   href="/Meet-Gelothra.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
