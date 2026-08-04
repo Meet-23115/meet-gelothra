@@ -92,8 +92,6 @@ React.useEffect(() => {
   return (
     <Carousel
       setApi={setApi}
-      // onMouseEnter={stopAutoplay}
-      // onMouseLeave={startAutoplay}
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       orientation="vertical"

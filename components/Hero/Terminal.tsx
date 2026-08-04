@@ -9,7 +9,7 @@ export function TerminalDiv() {
       className="terminal"
         commands={["whoami", "skills --stack", "launch ai-agent", "status"]}
         outputs={{
-          0: ["Meet Gelothra", "Software Engineer • AI Builder"],
+          0: ["Meet Gelothra", "Software Engineer • AI Developer"],
           1: [
             "React ✔",
             "Next.js ✔",
