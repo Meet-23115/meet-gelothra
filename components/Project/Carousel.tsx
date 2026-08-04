@@ -102,7 +102,7 @@ React.useEffect(() => {
       className="w-full h-[80%] "
     >
       <CarouselContent className=" h-full w-full carousel ">
-        <CarouselItem className="basis-full w-full h-full flex items-center justify-center carousel-item ">
+        {/* <CarouselItem className="basis-full w-full h-full flex items-center justify-center carousel-item ">
           <div className=" w-full h-full project-container flex  items-center justify-center ">
             <div className=" project-item">
               <h1>Hackathon-Winning AI Agent with System-Level Control</h1>
@@ -158,7 +158,7 @@ React.useEffect(() => {
               </Backlight>
             </div>
           </div>
-        </CarouselItem>
+        </CarouselItem> */}
         <CarouselItem className="basis-full w-full h-full flex items-center justify-center carousel-item ">
           <div className=" w-full h-full project-container flex  items-center justify-center ">
             <div className=" project-item">

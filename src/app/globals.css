@@ -353,6 +353,21 @@ body {
   width: 100vw;
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;
+  .headline-text{
+    font-size: 24px;
+  }
+  .sub-text{
+    font-size: 20px;
+  }
+  @media (min-width: 768px) {
+    .headline-text {
+      font-size: 34px;
+    }
+    .sub-text{
+      font-size: 24px;
+    }
+  }
+
   @media (max-width: 768px) {
     padding: 20px;
   }
@@ -370,8 +385,10 @@ body {
   .Content {
     .project-container {
       display: flex;
-      height: 50%;
       gap: 50px;
+      @media (min-width: 768px) {
+        height: fit-content;
+      }
 
       @media (max-width: 768px) {
         flex-direction: column-reverse;
@@ -383,6 +400,15 @@ body {
       .project-item {
         width: 100%;
         height: 50%;
+        h1 {
+          font-size: 28px;
+        }
+        p {
+          font-size: 20px;
+        }
+        @media (min-width: 768px) {
+          width: 60%;
+        }
         @media (max-width: 768px) {
           h1 {
             font-size: 20px;
@@ -448,7 +474,6 @@ body {
   width: 100%;
   display: flex;
   padding: 10px;
-  padding-top: 30px;
   justify-content: flex-end;
   color: rgb(143, 139, 139);
   .Mobile-nav-container {
@@ -457,10 +482,10 @@ body {
       padding: 10px;
       width: fit-content;
       height: 100%;
-      .nav-btn{
+      .nav-btn {
         display: flex;
         justify-content: flex-end;
-        &.hidden{
+        &.hidden {
           display: none;
         }
       }
@@ -468,7 +493,7 @@ body {
         width: 100%;
         font-size: 30px;
         position: relative;
-        .close-btn{
+        .close-btn {
           position: absolute;
           top: 10px;
           right: 10px;
@@ -481,11 +506,8 @@ body {
           flex-direction: column;
           justify-content: space-between;
           gap: 20px;
-          
         }
       }
     }
   }
 }
-
-
