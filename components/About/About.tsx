@@ -7,7 +7,7 @@ import { LiquidGlassCard } from "../uilayouts/liquid-glass";
 const About = () => {
   return (
     <div className="About" id="about">
-      <WavyBackground className="max-w-4xl flex flex-col gap-[10px] mx-auto pb-40">
+      <WavyBackground className="max-w-4xl flex flex-col gap-[10px] mx-auto ">
         <p className=" text-white headline-text font-bold inter-var text-center">
           <DiaTextReveal
             className="  text-white font-bold tracking-tight"
