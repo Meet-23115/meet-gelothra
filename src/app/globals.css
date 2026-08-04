@@ -347,7 +347,7 @@ body {
 .About {
   position: relative;
   top: 0;
-  z-index: -1;
+  z-index: 0;
   /* color: black; */
   height: 100vh;
   width: 100vw;
@@ -358,6 +358,17 @@ body {
   }
   .sub-text{
     font-size: 20px;
+  }
+  .Resume-btn-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    .resume-liquid-glass{
+      padding: 10px 20px;
+      color: white;
+      font-size: 18px;
+      font-weight: 600;
+    }
   }
   @media (min-width: 768px) {
     .headline-text {
